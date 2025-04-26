@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Meteo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .search-bar {
+            margin-bottom: 15px;
+        }
+        .current-weather {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .forecast {
+            margin-top: 20px;
+        }
+        .forecast-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .forecast-day {
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 3px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-bar">
+        <input type="text" id="city-input" placeholder="Inserisci la città">
+        <button onclick="getWeatherData()">Cerca</button>
+    </div>
+
+    <div id="current-weather" class="current-weather" style="display: none;">
+        <h2>Meteo attuale a <span id="current-city"></span></h2>
+        <p>Temperatura: <span id="current-temp"></span>°C</p>
+        <p>Condizione: <span id="current-description"></span></p>
+        <p>Umidità: <span id="current-humidity"></span>%</p>
+        <p>Vento: <span id="current-wind"></span> m/s</p>
+    </div>
+
+    <div id="forecast" class="forecast" style="display: none;">
+        <h2>Previsioni per i prossimi giorni</h2>
+        <div id="forecast-container">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

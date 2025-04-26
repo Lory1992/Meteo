@@ -1,6 +1,6 @@
 function getWeatherData() {
     const city = document.getElementById("city-input").value;
-    const apiUrl = `https://lory1992.github.io/Meteo/${city}`;
+    const apiUrl = `https://lory1992.github.io/Meteo/api/weather${city}`;
 
     fetch(apiUrl)
         .then(response => {
